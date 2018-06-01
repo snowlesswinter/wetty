@@ -36,6 +36,15 @@ socket.on('connect', function() {
         term.prefs_.set('ctrl-c-copy', true);
         term.prefs_.set('ctrl-v-paste', true);
         term.prefs_.set('use-default-window-copy', true);
+        
+        term.prefs_.set('font-size', 18);
+        term.prefs_.set('font-family', "DejaVu Sans Mono");
+        term.prefs_.set('background-color', '#282a36');
+        term.prefs_.set('foreground-color', '#f1f1f0');
+        term.prefs_.set('color-palette-overrides',
+            ['#282a36', '#ff5c57', '#5af78e', '#f3f99d', '#57c7ff', '#ff6ac1', '#9aedfe', '#f1f1f0',
+            '#686868', '#ff5c57', '#5af78e', '#f3f99d', '#57c7ff', '#ff6ac1', '#9aedfe', '#eff0eb']);
+
 
         term.runCommandClass(Wetty, document.location.hash.substr(1));
         socket.emit('resize', {
